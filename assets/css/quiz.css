@@ -7,7 +7,7 @@ body {
     margin-bottom: 0.8rem;
     width: 100%;
     border-radius: 4px;
-    background: rgb(18, 93, 255);
+    background: #38003c;
     font-size: 3rem;
     min-width: 80rem;
 }
@@ -16,4 +16,14 @@ body {
     cursor: pointer;
     transform: scale(1.02);
     transition: transform 100ms;
+}
+
+.choice-prefix {
+    padding: 2rem 2.5rem;
+    color: #fff;
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
 }
