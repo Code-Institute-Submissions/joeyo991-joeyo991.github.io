@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
 
 :root {
-    background-color: #e90052;
+    background-color: #38003c;
 }
 
 * {
@@ -65,7 +65,7 @@ h2 {
     margin-bottom: 1rem;
     text-decoration: none;
     color: #fff;
-    background: #38003c;
+    background: #e90052;
     border-radius: 4px;
 }
 
@@ -81,7 +81,7 @@ h2 {
 }
 
 #highscore-btn {
-    background: #38003c;
+    background: #e90052;
 }
 
 .fa-crown {

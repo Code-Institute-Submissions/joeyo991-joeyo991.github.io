@@ -7,7 +7,7 @@ body {
     margin-bottom: 0.8rem;
     width: 100%;
     border-radius: 4px;
-    background: #38003c;
+    background: #e90052;
     font-size: 3rem;
     min-width: 80rem;
 }
@@ -26,6 +26,14 @@ body {
 .choice-text {
     padding: 2rem;
     width: 100%;
+}
+
+.correct {
+    background: green;
+}
+
+.incorrect {
+    background: red;
 }
 
 @media screen and (max-width: 768px) {
