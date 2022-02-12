@@ -55,7 +55,7 @@ body {
     width: 20rem;
     height: 3rem;
     border: 0.2rem solid green;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 50px;
     overflow: hidden;
 }
@@ -64,6 +64,14 @@ body {
     height: 100%;
     background: green;
     width: 0%;
+}
+
+#image {
+    background-color: aqua;
+    height: 300px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 768px) {
