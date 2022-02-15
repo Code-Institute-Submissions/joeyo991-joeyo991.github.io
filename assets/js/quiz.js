@@ -5,6 +5,7 @@ const scoreText = document.querySelector('#score')
 const progressBarFull = document.querySelector('#progressBarFull')
 
 let currentQuestion = {}
+let currentImage = {}
 let acceptingAnswers = true
 let score = 0
 let questionCounter = 0
@@ -93,6 +94,10 @@ let questions = [
     },
 ]
 
+let images = [
+    
+]
+
 const SCORE_POINTS = 1
 const MAX_QUESTIONS = 10
 
@@ -117,6 +122,8 @@ getNewQuestion = () => {
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
+
+    document.getElementById("image").src = images[questionsIndex]
     
 
     choices.forEach(choice => {
