@@ -5,7 +5,6 @@ const scoreText = document.querySelector('#score')
 const progressBarFull = document.querySelector('#progressBarFull')
 
 let currentQuestion = {}
-let currentImage = {}
 let acceptingAnswers = true
 let score = 0
 let questionCounter = 0
@@ -19,6 +18,7 @@ let questions = [
         choice3: 'Mohamed Salah',
         choice4: 'Harry Kane',
         answer: 2,
+        imagesrc: 'assets/images/wayne-rooney.jpeg',
     },
     {
         question: 'Which team has won the most Premier League titles?',
@@ -27,6 +27,7 @@ let questions = [
         choice3: 'Manchester United',
         choice4: 'Manchester City',
         answer: 3,
+        imagesrc: 'assets/images/clubs.jpeg',
     },
     {
         question: 'Who has the most assists in Premier League history?',
@@ -35,6 +36,7 @@ let questions = [
         choice3: 'Thierry Henry',
         choice4: 'Trent Alexander-Arnold',
         answer: 1,
+        imagesrc: 'assets/images/steven-gerrard.jpeg',
     },
     {
         question: 'How many clubs have won the Premier League title?',
@@ -43,6 +45,7 @@ let questions = [
         choice3: '7',
         choice4: '8',
         answer: 3,
+        imagesrc: 'assets/images/leicester-city.jpeg',
     },
     {
         question: 'What is the record points total in a Premier League season?',
@@ -51,6 +54,7 @@ let questions = [
         choice3: '106',
         choice4: '114',
         answer: 2,
+        imagesrc: 'assets/images/record-points-total.jpg',
     },
     {
         question: 'Which player has the most Premier League appearances?',
@@ -59,6 +63,7 @@ let questions = [
         choice3: 'David James',
         choice4: 'Gareth Barry',
         answer: 4,
+        imagesrc: 'assets/images/gareth-barry.jpg',
     },
     {
         question: 'In what year did the Premier League begin?',
@@ -67,6 +72,7 @@ let questions = [
         choice3: '1995',
         choice4: '1996',
         answer: 2,
+        imagesrc: 'assets/images/first-season.jpg',
     },
     {
         question: 'Who has played for the most Premier League clubs?',
@@ -75,6 +81,7 @@ let questions = [
         choice3: 'Marcus Bent',
         choice4: 'Andy Cole',
         answer: 3,
+        imagesrc: 'assets/images/nicolas-anelka.jpg',
     },
     {
         question: 'Who has not won the Premier League with two different clubs?',
@@ -83,6 +90,7 @@ let questions = [
         choice3: 'Henning Berg',
         choice4: 'Ashley Cole',
         answer: 1,
+        imagesrc: 'assets/images/frank-lampard-john-terry.jpg',
     },
     {
         question: 'Who scored the first goal in the Premier League era?',
@@ -91,12 +99,10 @@ let questions = [
         choice3: 'Les Ferdinand',
         choice4: 'Steve Bruce',
         answer: 1,
+        imagesrc: 'assets/images/gordon-strachan.jpg',
     },
 ]
 
-let images = [
-    
-]
 
 const SCORE_POINTS = 1
 const MAX_QUESTIONS = 10
@@ -122,9 +128,8 @@ getNewQuestion = () => {
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
-
-    document.getElementById("image").src = images[questionsIndex]
     
+    document.getElementById("image").src = currentQuestion.imagesrc
 
     choices.forEach(choice => {
         const number = choice.dataset['number']
