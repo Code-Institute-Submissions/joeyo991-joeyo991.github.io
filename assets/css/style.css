@@ -1,6 +1,8 @@
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
 
+/* The default styles for the pages */
+
 :root {
     background-color: #38003c;
 }
@@ -23,6 +25,8 @@ h2 {
     font-size: 3.2rem;
     margin-bottom: 4rem;
 }
+
+/* Contains all the content */
 
 .container {
     width: 100vw;
@@ -57,6 +61,8 @@ h2 {
     display: none;
 }
 
+/* All the buttons throughout the site */
+
 .btn {
     font-size: 2.4rem;
     padding: 2rem 0;
@@ -68,6 +74,8 @@ h2 {
     background: #e90052;
     border-radius: 4px;
 }
+
+/* Button effects */
 
 .btn:hover {
     cursor: pointer;
@@ -84,6 +92,8 @@ h2 {
     background: #e90052;
 }
 
+/* Font Awesome Icon*/
+
 .fa-crown {
     font-size: 2.5rem;
     margin-left: 1rem;
@@ -97,6 +107,8 @@ h2 {
     align-items: center;
     max-width: 30rem;
 }
+
+/* Username input field */
 
 input {
     margin-bottom: 1rem;
@@ -126,21 +138,29 @@ input::placeholder {
     border: none;
 }
 
+/* Font Awesome Icon*/
+
 .fa-home {
     margin-left: 1rem;
     font-size: 2rem;
     color: #fff;
 }
 
+/* Home page image */
+
 #trophy-img {
     margin-bottom: 2rem;
     width: 80%;
 }
 
+/* All images on the site */
+
 img {
     height: 100%;
     width: 100%;
 }
+
+/* For screens 768px and less (Mobile) */
 
 @media screen and (max-width: 768px) {
     h1 {

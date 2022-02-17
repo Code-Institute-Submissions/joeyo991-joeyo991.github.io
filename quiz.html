@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A challenging 10 question Premier League Quiz">
+    <meta name="keywords" content="Premier League, Football, Quiz, Trivia">
+    <meta name="author" content="Joey O'Sullivan">
     <title>Premier League Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
 <body>
+    <!--Quiz Container-->
     <div class="container">
-        <div id="game" class="justify-center flex-column">
+        <div id="quiz" class="justify-center flex-column">
+            <!--Progress Bar, Score, etc.-->
             <div id="hud">
                 <div class="hud-item">
                     <p id="progressText" class="hud-prefix">
@@ -29,10 +34,13 @@
                     </h1>
                 </div>
             </div>
+            <!--The Questions-->
             <h1 id="question">Question</h1>
+            <!--Image for question-->
             <div id="image-div">
                 <img id="image">
             </div>
+            <!--4 Choices for each question-->
             <div class="choice-container">
                 <p class="choice-prefix">A</p>
                 <p class="choice-text" data-number="1">Choice 1</p>
@@ -51,6 +59,7 @@
             </div>
         </div>
     </div>
+    <!--Javascript Link-->
     <script src="assets/js/quiz.js"></script>
 </body>
 </html>

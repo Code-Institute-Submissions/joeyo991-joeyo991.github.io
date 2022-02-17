@@ -10,6 +10,7 @@ let score = 0
 let questionCounter = 0
 let availableQuestions = []
 
+// The questions of the quiz
 let questions = [
     {
         question: 'Who is the all-time Premier League top scorer?',
@@ -107,6 +108,7 @@ let questions = [
 const SCORE_POINTS = 1
 const MAX_QUESTIONS = 10
 
+// Function to start the Quiz
 startQuiz = () => {
     questionCounter = 0
     score = 0
@@ -114,6 +116,7 @@ startQuiz = () => {
     getNewQuestion()
 }
 
+// Function to display the next question
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
@@ -122,13 +125,16 @@ getNewQuestion = () => {
     }
 
     questionCounter++
+    //Updates the progress bar and text
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
+    // Generates a random order for the questions
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
     
+    //Displays an image for the current question
     document.getElementById("image").src = currentQuestion.imagesrc
 
     choices.forEach(choice => {
@@ -141,6 +147,7 @@ getNewQuestion = () => {
     acceptingAnswers = true
 }
 
+// Function to allow a choice to be made by the player
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
@@ -151,12 +158,15 @@ choices.forEach(choice => {
 
        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
+       // Increments score if choice is correct
        if(classToApply === 'correct') {
            incrementScore(SCORE_POINTS)
        }
 
        selectedChoice.parentElement.classList.add(classToApply)
 
+       /* Changes colour of choice for 1 second to green
+       if correct and red if wrong */ 
        setTimeout(() => {
            selectedChoice.parentElement.classList.remove(classToApply)
            getNewQuestion()
@@ -165,9 +175,11 @@ choices.forEach(choice => {
     })
 })
 
+//Updates Score
 incrementScore = num => {
     score += num
     scoreText.innerText = score
 }
 
+//Runs the quiz
 startQuiz()

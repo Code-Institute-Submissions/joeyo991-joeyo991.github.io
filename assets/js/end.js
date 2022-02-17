@@ -7,6 +7,7 @@ const highScores = JSON.parse(localStorage.getItem('highscores')) || []
 
 const MAX_HIGH_SCORES = 5
 
+// Displays the users score at end of quiz
 finalScore.innerText = `You scored ${mostRecentScore} out of 10!`
 
 username.addEventListener('keyup', () => {
@@ -16,6 +17,7 @@ username.addEventListener('keyup', () => {
 saveHighScore = e => {
     e.preventDefault()
 
+    // Saves the users highscore
     const score = {
         score: mostRecentScore,
         name: username.value
@@ -27,6 +29,7 @@ saveHighScore = e => {
         return b.score - a.score
     })
 
+    // leaderboard can have 5 names
     highScores.splice(5)
 
     localStorage.setItem('highScores', JSON.stringify(highScores))
