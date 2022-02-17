@@ -66,8 +66,8 @@ body {
 }
 
 #image-div {
-    background-color: aqua;
-    height: fit-content;
+    background-color: #38003c;
+    height: 400px;
     width: 100%;
     margin: auto;
     margin-bottom: 1rem;
