@@ -1,14 +1,14 @@
-const question = document.querySelector('#question')
-const choices = Array.from(document.querySelectorAll('.choice-text'))
-const progressText = document.querySelector('#progressText')
-const scoreText = document.querySelector('#score')
-const progressBarFull = document.querySelector('#progressBarFull')
+const question = document.querySelector('#question');
+const choices = Array.from(document.querySelectorAll('.choice-text'));
+const progressText = document.querySelector('#progressText');
+const scoreText = document.querySelector('#score');
+const progressBarFull = document.querySelector('#progressBarFull');
 
-let currentQuestion = {}
-let acceptingAnswers = true
-let score = 0
-let questionCounter = 0
-let availableQuestions = []
+let currentQuestion = {};
+let acceptingAnswers = true;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 
 // The questions of the quiz
 let questions = [
@@ -102,84 +102,84 @@ let questions = [
         answer: 1,
         imagesrc: 'assets/images/gordon-strachan.jpg',
     },
-]
+];
 
 
-const SCORE_POINTS = 1
-const MAX_QUESTIONS = 10
+const SCORE_POINTS = 1;
+const MAX_QUESTIONS = 10;
 
 // Function to start the Quiz
 startQuiz = () => {
-    questionCounter = 0
-    score = 0
-    availableQuestions = [...questions]
-    getNewQuestion()
-}
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
+    getNewQuestion();
+};
 
 // Function to display the next question
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score)
+        localStorage.setItem('mostRecentScore', score);
 
-        return window.location.assign('/end.html')
+        return window.location.assign('/end.html');
     }
 
-    questionCounter++
+    questionCounter++;
     //Updates the progress bar and text
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
 
     // Generates a random order for the questions
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[questionsIndex]
-    question.innerText = currentQuestion.question
+    const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
+    currentQuestion = availableQuestions[questionsIndex];
+    question.innerText = currentQuestion.question;
     
     //Displays an image for the current question
-    document.getElementById("image").src = currentQuestion.imagesrc
+    document.getElementById("image").src = currentQuestion.imagesrc;
 
     choices.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice' + number]
-    })
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    });
 
-    availableQuestions.splice(questionsIndex, 1)
+    availableQuestions.splice(questionsIndex, 1);
 
-    acceptingAnswers = true
-}
+    acceptingAnswers = true;
+};
 
 // Function to allow a choice to be made by the player
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
-        if(!acceptingAnswers) return
+        if(!acceptingAnswers) return;
 
-       acceptingAnswers = false
-       const selectedChoice = e.target
-       const selectedAnswer = selectedChoice.dataset['number']
+       acceptingAnswers = false;
+       const selectedChoice = e.target;
+       const selectedAnswer = selectedChoice.dataset['number'];
 
-       let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
+       let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
        // Increments score if choice is correct
        if(classToApply === 'correct') {
-           incrementScore(SCORE_POINTS)
+           incrementScore(SCORE_POINTS);
        }
 
-       selectedChoice.parentElement.classList.add(classToApply)
+       selectedChoice.parentElement.classList.add(classToApply);
 
        /* Changes colour of choice for 1 second to green
        if correct and red if wrong */ 
        setTimeout(() => {
-           selectedChoice.parentElement.classList.remove(classToApply)
-           getNewQuestion()
+           selectedChoice.parentElement.classList.remove(classToApply);
+           getNewQuestion();
 
-       }, 1000)
-    })
-})
+       }, 1000);
+    });
+});
 
 //Updates Score
 incrementScore = num => {
-    score += num
-    scoreText.innerText = score
-}
+    score += num;
+    scoreText.innerText = score;
+};
 
 //Runs the quiz
-startQuiz()
+startQuiz();
