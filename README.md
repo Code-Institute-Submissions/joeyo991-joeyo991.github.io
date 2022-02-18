@@ -10,7 +10,7 @@ Welcome to the process behind <a href="https://joeyo991.github.io/" target="_bla
 
 ## Site Structure
 
-The Premier League Quiz website is a single page with a quiz in the shape of a form for the user to complete.
+The Premier League Quiz page is a 10 question quiz for the user to complete. Upon finishing they will be shown their results and prompted to enter a name and save their score.
 
 ## Design Choices
 
