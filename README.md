@@ -77,7 +77,7 @@ The Premier League Quiz is set up to be striking and easy on the eyes. It is imm
 * Timer
   * I could also add a timer to give the user only a limited time to complete the quiz, like many quiz sites have. I didn't have one here as I wanted the quiz to be fun and I feel a timer can make it stressful.
 * Global Leaderboards
-  * For now he leaderboard is saved in local storage. In the future I would like for this to be a global leaderboard/
+  * For now he leaderboard is saved in local storage. In the future I would like for this to be a global leaderboard.
 
 # Technologies Used
 
