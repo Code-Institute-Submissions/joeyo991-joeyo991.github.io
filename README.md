@@ -113,7 +113,7 @@ End.js:
 
 ![end.js results](assets/readme-images/end-results.png)
 
-Highscores.js:
+Highscores.js: 
 
 ![highscores.js results](assets/readme-images/highscores-results.png)
 
