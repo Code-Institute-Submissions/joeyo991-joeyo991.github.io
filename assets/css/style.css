@@ -171,4 +171,8 @@ img {
     #end-text {
         font-size: 1.8rem;
     }
+
+    .container {
+        height: fit-content;
+    }
 }
